@@ -50,18 +50,10 @@ app.post('/measurement', function (req, res) {
 
 app.post('/device', function (req, res) {
 	console.log("device id    : " + req.body.id + " name        : " + req.body.n + " key         : " + req.body.k );
-//Esta seccion del codigo publica las mediciones tomadas en la seccion anterior en los body para ser exhibidos en el HTML
+
     db.public.none("INSERT INTO devices VALUES ('"+req.body.id+ "', '"+req.body.n+"', '"+req.body.k+"')");
 	res.send("received new device");
-	});
-	
-	
-
-	
-	
-	
-	
-
+});
 
 
 app.get('/web/device', function (req, res) {

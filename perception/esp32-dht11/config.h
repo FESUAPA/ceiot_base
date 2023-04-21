@@ -4,6 +4,8 @@
 #define API_PORT      "8080"
 #define API_IP_PORT   API_IP ":" API_PORT
 
+
+
 #define WIFI_SSID     "CATAMARCA_GUEST"
 #define WIFI_PASSWORD "noteladoy"
 
@@ -16,7 +18,7 @@
 
 // esp32s2-dht11 
 // #define ONE_WIRE_GPIO 0
-// #define USER_AGENT    "esp-idf/1.0 esp32s2"
+//#define USER_AGENT    "esp-idf/1.0 esp32s2"
 
 // esp8266-dht11-arduino
 // #define ONE_WIRE_GPIO 2

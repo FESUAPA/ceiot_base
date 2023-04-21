@@ -1,0 +1,24 @@
+//Esta seccion del codigo toma las mediciones de temperatura y humedad, luego las inserta en los cuerpos (body) que corresponda fs 17/04/2023
+app.post('/measurement', function (req, res) {
+-       console.log("device id    : " + req.body.id + " key         : " + req.body.key + " temperature : " + req.body.t + " humidity    : " + req.body.h);	
+    const {insertedId} = insertMeasurement({id:req.body.id, t:req.body.t, h:req.body.h});
+	res.send("received measurement into " +  insertedId);
+//Intento inserto de timestamp FS 17/04/2023
+    let output = document.querySelector('h1');
+    let today = new Date(); 
+
+    let month = addZero(today.getMonth());
+    let year = addZero(today.getFullYear());
+    let date = addZero(today.getDate());
+
+    let current_date = ` ${month} / ${date} / ${year} `
+    let hours = addZero(today.getHours());
+    let minutes = addZero(today.getMinutes());
+    let seconds = addZero(today.getSeconds());
+    let current_time = ` ${hours} - ${minutes} - ${seconds} | ${month} / ${date} / ${year}`;
+    output.innerText = current_time;
+    function addZero(num){
+        return num < 10? `0${num}` :num;
+    }
+
+	//tiempo timestamp comentario original
